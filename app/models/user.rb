@@ -10,6 +10,7 @@
 #
 
 class User < ActiveRecord::Base
+   searchkick
   attr_accessible :email, :name , :password , :password_confirmation
   has_secure_password
   has_many :microposts, dependent: :destroy

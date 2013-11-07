@@ -4,10 +4,21 @@ before_filter :correct_user, only: [:edit, :update]
 before_filter :admin_user,only: :destroy
 before_filter :signed_in_user_filter, only: [:new, :create]
 
-  def index
-    @users = User.paginate(page: params[:page])
-  end
+  #def index
+   # if params[:query].present?
+    #  @users = User.search(params[:query], page: params[:page])
+    #else
+     # @users = User.all.page params[:page]
+    #end
+  #end
     
+
+   def index
+    @users = User.paginate(page: params[:page])
+   end
+
+
+
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
