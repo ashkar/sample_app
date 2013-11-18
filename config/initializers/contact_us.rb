@@ -15,7 +15,7 @@ ContactUs.setup do |config|
 
   # Configure the form to ask for the users name.
   config.require_name = false
-
+  #config.success_redirect = '/'
   # Configure the form to ask for a subject.
   config.require_subject = false
 
